@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Kumbh_Sans } from 'next/font/google';
-import DataProvider from '@/app/_providers/DataContext';
+// import DataProvider from '@/app/_providers/DataContext';
 
 const kumbhSans = Kumbh_Sans({
   display: 'swap',
@@ -11,9 +11,9 @@ const kumbhSans = Kumbh_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Officelite coming soon site',
-  description: 'Officelite coming soon site',
-  applicationName: 'Officelite coming soon site',
+  title: 'Password generator app',
+  description: 'Password generator app',
+  applicationName: 'Password generator app',
 } as const;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,8 +25,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
         <meta property="og:image" content={undefined} />
       </head>
-      <body className={`${kumbhSans.variable} bg-[#FAFAFA]`}>
-        <DataProvider>{children}</DataProvider>
+      <body className={`${kumbhSans.variable} mx-auto w-full overflow-x-clip bg-white transition dark:bg-[#050505]`}>
+        {/* <DataProvider>{children}</DataProvider> */}
+        {children}
       </body>
     </html>
   );
