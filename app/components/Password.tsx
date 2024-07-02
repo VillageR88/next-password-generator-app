@@ -2,12 +2,12 @@ export default function Password() {
   return (
     <label className="relative" htmlFor="password">
       <input
+        placeholder="P4$5W0rD!"
         id="password"
-        defaultValue={'PTx1f5DaFX'}
         disabled
         title="password"
         name="password"
-        className="h-[80px] w-full bg-[#24232C] pl-[32px] pr-[50px] text-[32px] font-bold text-almostWhite"
+        className="h-[80px] w-full bg-[#24232C] pl-[32px] pr-[50px] text-[32px] font-bold text-almostWhite placeholder:text-almostWhite/25"
         type="text"
       />
       <button title="copy to clipboard" type="button" className="absolute right-[32px] top-[28px]">

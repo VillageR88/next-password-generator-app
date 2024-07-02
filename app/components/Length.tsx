@@ -1,5 +1,8 @@
+'use client';
+
 import { CSSProperties, useState } from 'react';
 const title = 'Character Length';
+
 export default function Length() {
   const [range, setRange] = useState<number>(10);
 

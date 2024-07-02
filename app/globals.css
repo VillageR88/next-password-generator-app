@@ -6,9 +6,20 @@ h1 {
 }
 
 input[type='range'] {
-  @apply h-[8px] w-full appearance-none bg-transparent;
+  @apply h-[8px] w-full appearance-none bg-transparent transition-colors hover:cursor-pointer;
 }
 
 input[type='range']::-webkit-slider-thumb {
-  @apply size-[28px] appearance-none rounded-full bg-almostWhite;
+  @apply size-[28px] appearance-none rounded-full bg-almostWhite outline outline-[2px] -outline-offset-2 outline-almostWhite transition-colors;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  @apply size-[28px] appearance-none rounded-full bg-[#18171F] outline outline-[2px] -outline-offset-2 outline-neonGreen transition-colors hover:cursor-pointer;
+}
+
+input[type='checkbox'] {
+  @apply appearance-none border-[2px] border-almostWhite transition-colors hover:cursor-pointer hover:border-neonGreen;
+}
+
+input[type='checkbox']:checked {
+  @apply border-[2px] border-neonGreen bg-neonGreen transition-colors;
 }
