@@ -16,10 +16,11 @@ const config: Config = {
         screenInBetween: '1024px',
       },
       fontFamily: {
-        kumbhSans: ['var(--font-kumbhSans)'],
+        jetBrainsMono: ['var(--font-jetBrainsMono)'],
       },
       colors: {
-        gray1: '#121212',
+        almostWhite: '#E6E5EA',
+        neonGreen: '#A4FFAF',
       },
     },
   },
