@@ -1,12 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Kumbh_Sans } from 'next/font/google';
-// import DataProvider from '@/app/_providers/DataContext';
+import { JetBrains_Mono } from 'next/font/google';
+import DataProvider from '@/app/_providers/DataContext';
 
-const kumbhSans = Kumbh_Sans({
+const jetBrainsMono = JetBrains_Mono({
   display: 'swap',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-kumbhSans',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-jetBrainsMono',
   subsets: ['latin', 'latin-ext'],
 });
 
@@ -25,9 +25,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
         <meta property="og:image" content={undefined} />
       </head>
-      <body className={`${kumbhSans.variable} mx-auto w-full overflow-x-clip bg-white transition dark:bg-[#050505]`}>
-        {/* <DataProvider>{children}</DataProvider> */}
-        {children}
+      <body
+        className={`${jetBrainsMono.variable} mx-auto flex min-h-dvh flex-col justify-center overflow-x-clip bg-gradient-to-b from-[#14131B] to-[#08070B] font-jetBrainsMono md:min-h-screen`}
+      >
+        <DataProvider>{children}</DataProvider>
       </body>
     </html>
   );
