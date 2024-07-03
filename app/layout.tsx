@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { JetBrains_Mono } from 'next/font/google';
-// import DataProvider from '@/app/_providers/DataContext';
+import DataProvider from '@/app/_providers/DataContext';
 
 const jetBrainsMono = JetBrains_Mono({
   display: 'swap',
@@ -26,10 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:image" content={undefined} />
       </head>
       <body
-        className={`${jetBrainsMono.variable} font-jetBrainsMono mx-auto flex min-h-dvh flex-col justify-center overflow-x-clip bg-gradient-to-b from-[#14131B] to-[#08070B] md:min-h-screen`}
+        className={`${jetBrainsMono.variable} mx-auto flex min-h-dvh flex-col justify-center overflow-x-clip bg-gradient-to-b from-[#14131B] to-[#08070B] font-jetBrainsMono md:min-h-screen`}
       >
-        {/* <DataProvider>{children}</DataProvider> */}
-        {children}
+        <DataProvider>{children}</DataProvider>
       </body>
     </html>
   );

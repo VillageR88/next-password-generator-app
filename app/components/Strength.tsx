@@ -1,13 +1,6 @@
 'use client';
-
-import { useState } from 'react';
-
-enum Power {
-  vWeak = 'vWeak',
-  weak = 'weak',
-  medium = 'medium',
-  strong = 'strong',
-}
+import { DataContext } from '@/app/_providers/DataContext';
+import { useContext } from 'react';
 
 const title = 'STRENGTH';
 const description = {
@@ -18,17 +11,19 @@ const description = {
 };
 
 export default function Strength() {
-  const [power, setPower] = useState<Power | undefined>(undefined);
+  const { password } = useContext(DataContext);
   return (
-    <div className="mt-[32px] flex h-[72px] w-full items-center justify-between bg-[#18171F] px-[32px]">
+    <div className="mt-[26px] flex w-full flex-wrap items-center justify-between gap-4 bg-[#18171F] px-[16px] py-[12.5px] sm:h-[72px] sm:px-[32px]">
       <span className="text-[18px] font-bold text-[#929292]">{title}</span>
       <div className="flex h-[31px] w-fit items-center justify-between gap-[15.5px]">
-        <span className="text-[24px] font-bold text-almostWhite">{power}</span>
+        <span className="text-[18px] font-bold text-almostWhite sm:text-[24px]">
+          {password.passwordStrength && description[password.passwordStrength as keyof typeof description].title}
+        </span>
         <ul className="flex h-[28px] w-fit items-center justify-between gap-[8px]">
           {Array.from({ length: 4 }).map((_, index) => (
             <li
               key={index}
-              className={`h-[28px] w-[10px] ${power && index < description[power].cover ? description[power].color : 'border-2'}`}
+              className={`h-[28px] w-[10px] ${password.passwordStrength && index < description[password.passwordStrength].cover ? description[password.passwordStrength].color : 'border-2'}`}
             />
           ))}
         </ul>

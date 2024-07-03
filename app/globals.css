@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 h1 {
-  @apply text-[24px] font-bold text-[#929292];
+  @apply text-[16px] font-bold text-[#929292] sm:text-[24px];
+}
+
+input[type='range']:hover::-webkit-slider-thumb {
+  @apply appearance-none rounded-full bg-[#18171F] outline outline-[2px] -outline-offset-2 outline-neonGreen transition-colors hover:cursor-grab;
+}
+
+input[type='range']:hover::-moz-range-thumb {
+  @apply appearance-none rounded-full bg-[#18171F] outline outline-[2px] -outline-offset-2 outline-neonGreen transition-colors hover:cursor-grab;
 }
 
 input[type='range'] {
-  @apply h-[8px] w-full appearance-none bg-transparent transition-colors hover:cursor-pointer;
+  @apply h-[8px] w-full cursor-pointer appearance-none bg-transparent transition-colors;
 }
 
 input[type='range']::-webkit-slider-thumb {
-  @apply size-[28px] appearance-none rounded-full bg-almostWhite outline outline-[2px] -outline-offset-2 outline-almostWhite transition-colors;
-}
-input[type='range']::-webkit-slider-thumb:hover {
-  @apply size-[28px] appearance-none rounded-full bg-[#18171F] outline outline-[2px] -outline-offset-2 outline-neonGreen transition-colors hover:cursor-pointer;
+  @apply mb-[5px] size-[28px] appearance-none rounded-full bg-almostWhite outline outline-[2px] -outline-offset-2 outline-almostWhite transition-colors;
 }
 
 input[type='checkbox'] {
@@ -22,4 +27,8 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
   @apply border-[2px] border-neonGreen bg-neonGreen transition-colors;
+}
+
+::-moz-range-thumb {
+  @apply size-[28px] appearance-none rounded-full;
 }
